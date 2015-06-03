@@ -30,6 +30,7 @@ ch.setLevel(logging.DEBUG)
 ch.setFormatter(formatter)
 
 logger.addHandler(ch)
+logger.addHandler(fh)
 
 
 # Initialize global conf variable.
@@ -156,7 +157,7 @@ def cmdline():
     try:
         conf = json.load(fil)
     except ValueError as e:
-        logger.error("Configuration deserialization failed: {}".format(e))
+        logger.error("Configuration deserialization failed: {}.".format(e))
         sys.exit(-1)
 
     required_infos = (
