@@ -1,1 +1,3 @@
+*.pyc
+*~
 crossfit_registration.egg-info/
