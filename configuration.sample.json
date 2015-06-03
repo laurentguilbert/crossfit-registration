@@ -1,0 +1,13 @@
+{
+    "username": "username",
+    "password": "password",
+    "email": "email",
+    "id_compte": 12345,
+    "id_membre": 12345,
+    "slots": [
+        [0, "1830"],
+        [1, "1830"],
+        [2, "1830"],
+        [3, "1830"]
+    ]
+}
