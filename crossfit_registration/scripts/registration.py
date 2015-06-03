@@ -11,12 +11,6 @@ import requests
 from bs4 import BeautifulSoup
 
 
-global conf
-
-########################
-# Logger configuration #
-########################
-
 logger = logging.getLogger('crossfit-registration')
 logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -36,12 +30,7 @@ logger.addHandler(fh)
 # Initialize global conf variable.
 conf = {}
 
-##################
-# Authentication #
-##################
-
 AUTH_COOKIE_ID = '4a45b8f51948b97b4e0ee4605174b1ca'
-AUTH_COOKIE_VALUE = None
 
 
 def authenticate():
@@ -75,10 +64,6 @@ def authenticate():
         logger.error("Impossible to retrieve the authentication cookie.")
         sys.exit(-1)
 
-
-################
-# Registration #
-################
 
 def register_wod(day, time):
     """
