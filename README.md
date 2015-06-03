@@ -19,7 +19,7 @@ Tired of forgetting to subscribe to your favorite WOD ? No more !
         [0, "1830"],
         [1, "1830"],
         [2, "1830"],
-        [3, "1830"],
+        [3, "1830"]
     ]
 }
 ```
