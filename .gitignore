@@ -1,3 +1,7 @@
 *.pyc
 *~
 crossfit_registration.egg-info/
+bin/
+develop-eggs/
+eggs/
+parts/
