@@ -102,17 +102,15 @@ def register_wod(day, time):
 
 
 def register():
-    today = datetime.date.today()
+    registration_date = datetime.date.today()
     # Registrations are opened 4 days in advance.
-    weekday = (today.weekday() + 4) % 7
-    try_register = False
+    registration_date = registration_date + datetime.timedelta(days=4)
     for slot in conf.get('slots'):
-        if slot[0] == weekday:
+        if slot[0] == registration_date.weekday():
             authenticate()
-            register_wod(str(today), slot[1])
-            try_register = True
+            register_wod(str(registration_date), slot[1])
             break
-    if not try_register:
+    else:
         logger.info("Nothing to register for.")
 
 
