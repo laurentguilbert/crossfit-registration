@@ -1,7 +1,8 @@
 *.pyc
 *~
-crossfit_registration.egg-info/
+.installed.cfg
 bin/
+crossfit_registration.egg-info/
 develop-eggs/
 eggs/
 parts/
