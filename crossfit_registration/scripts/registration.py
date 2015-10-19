@@ -65,7 +65,7 @@ def authenticate():
         sys.exit(-1)
 
 
-def register_wod(day, time):
+def register_wod(day, time, activite):
     """
     Register for a given WOD.
 
@@ -79,7 +79,7 @@ def register_wod(day, time):
         'idcompte': conf.get('id_compte'),
         'idMembre': conf.get('id_membre'),
         'mailMembre': conf.get('email'),
-        'activite': 50,
+        'activite': activite,
         'lejour': day,
         'lecreno': time,
         'effectif': 12,
@@ -106,9 +106,9 @@ def register():
     # Registrations are opened 4 days in advance.
     registration_date = registration_date + datetime.timedelta(days=4)
     for slot in conf.get('slots'):
-        if slot[0] == registration_date.weekday():
+        if len(slot) == 3 and slot[0] == registration_date.weekday():
             authenticate()
-            register_wod(str(registration_date), slot[1])
+            register_wod(str(registration_date), slot[1], slot[2])
             break
     else:
         logger.info("Nothing to register for.")
@@ -146,7 +146,7 @@ def cmdline():
     required_infos = (
         'username', 'password', 'email', 'slots', 'id_compte', 'id_membre')
     for required_info in required_infos:
-        if not required_info in conf:
+        if required_info not in conf:
             logger.error("Missing information: {}.".format(required_info))
             sys.exit(-1)
 
