@@ -16,15 +16,16 @@ Tired of forgetting to subscribe to your favorite WOD ? No more !
     "id_compte": 12345,
     "id_membre": 12345,
     "slots": [
-        [0, "1830"],
-        [1, "1830"],
-        [2, "1830"],
-        [3, "1830"]
+        [0, "1830", 50],
+        [1, "1830", 50],
+        [2, "1830", 50],
+        [3, "1830", 50],
+        [3, "1830", 45],
     ]
 }
 ```
 
-Each entry in slots is composed of the day of the week (starting from 0) and the desired time.
+Each entry in slots is composed of the day of the week (starting from 0), the desired time and the activity type.
 
 ### Setup the cron job
 
