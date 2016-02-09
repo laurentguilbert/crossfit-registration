@@ -31,7 +31,7 @@ Each entry in slots is composed of the day of the week (starting from 0), the de
 
 ```
 crontab -e
-5 0 * * * crossfit-registration -c /path/to/conf.json
+5 0 * * * /usr/local/bin/crossfit-registration -c /path/to/conf.json
 ```
 
 ### Logging
